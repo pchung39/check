@@ -1,4 +1,4 @@
-check
+Check: Rule Your Day
 =====
 
-A Ruby-On-Rails To-Do app
+
