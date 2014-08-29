@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :todoodoos, :dependent => :destroy
-  has_many :roles, through: :user_roles
+  has_many :roles, through: :association
 
   ROLES = %w[admin user]
   serialize :roles
