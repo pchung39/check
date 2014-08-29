@@ -13,8 +13,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.submit "Sign up" %></div>
-
+  
   <div><%= f.collection_select :roles, User::ROLES, :to_s, :humanize %></div>
-<% end %>
+  <% end %>
 
 <%= render "devise/shared/links" %>
