@@ -17777,3 +17777,705 @@ Migrating to CreateAssociations (20140829170006)
             WHERE name='index_users_on_email' AND type='index'
 
   [1m[36mAssociation Load (2.2ms)[0m  [1mSELECT "associations".* FROM "associations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  [1m[35mTodoodoo Load (0.3ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'
+  [1m[36mTodoodoo Load (0.2ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'[0m
+  Rendered welcome/home.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 492ms (Views: 410.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:30 -0700
+
+
+Started GET "/todoodoo/new" for 127.0.0.1 at 2014-09-01 10:56:41 -0700
+Processing by TodoodooController#new as HTML
+  Rendered todoodoo/new.html.erb within layouts/application (190.9ms)
+Completed 200 OK in 248ms (Views: 226.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/todoodoo" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+Processing by TodoodooController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "todoodoo"=>{"name"=>"Test test", "done"=>"false"}, "commit"=>"Add to To-Do list"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "todoodoos" ("created_at", "done", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-09-01 17:56:51.393297"], ["done", "f"], ["name", "Test test"], ["updated_at", "2014-09-01 17:56:51.393297"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/todoodoo/index
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/todoodoo/index" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+Processing by TodoodooController#index as HTML
+  [1m[36mTodoodoo Load (0.3ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'[0m
+  [1m[35mTodoodoo Load (0.6ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'
+  Rendered todoodoo/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:51 -0700
+
+
+Started PUT "/todoodoo/67" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+Processing by TodoodooController#update as HTML
+  Parameters: {"authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "id"=>"67"}
+  [1m[36mTodoodoo Load (0.3ms)[0m  [1mSELECT  "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."id" = ? LIMIT 1[0m  [["id", 67]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "todoodoos" SET "done" = ?, "updated_at" = ? WHERE "todoodoos"."id" = 67[0m  [["done", "t"], ["updated_at", "2014-09-01 17:56:53.453489"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/todoodoo/index?notice=Your+To-Do+item+was+marked+as+done%21
+Completed 302 Found in 15ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/todoodoo/index?notice=Your+To-Do+item+was+marked+as+done%21" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+Processing by TodoodooController#index as HTML
+  Parameters: {"notice"=>"Your To-Do item was marked as done!"}
+  [1m[36mTodoodoo Load (0.3ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'[0m
+  [1m[35mTodoodoo Load (0.2ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'
+  Rendered todoodoo/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:53 -0700
+
+
+Started DELETE "/todoodoo/67" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+Processing by TodoodooController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "id"=>"67"}
+  [1m[36mTodoodoo Load (0.1ms)[0m  [1mSELECT  "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."id" = ? LIMIT 1[0m  [["id", 67]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "todoodoos" WHERE "todoodoos"."id" = ?[0m  [["id", 67]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/todoodoo/index
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/todoodoo/index" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+Processing by TodoodooController#index as HTML
+  [1m[36mTodoodoo Load (0.2ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'[0m
+  [1m[35mTodoodoo Load (0.1ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'
+  Rendered todoodoo/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:54 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+
+
+Started GET "/todoodoo/new" for 127.0.0.1 at 2014-09-01 10:56:55 -0700
+Processing by TodoodooController#new as HTML
+  Rendered todoodoo/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todoodoo" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+Processing by TodoodooController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "todoodoo"=>{"name"=>"teststest", "done"=>"false"}, "commit"=>"Add to To-Do list"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "todoodoos" ("created_at", "done", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-09-01 17:56:58.738002"], ["done", "f"], ["name", "teststest"], ["updated_at", "2014-09-01 17:56:58.738002"]]
+  [1m[36m (43.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todoodoo/index
+Completed 302 Found in 52ms (ActiveRecord: 46.6ms)
+
+
+Started GET "/todoodoo/index" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+Processing by TodoodooController#index as HTML
+  [1m[35mTodoodoo Load (0.3ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'
+  [1m[36mTodoodoo Load (0.2ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'[0m
+  Rendered todoodoo/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:58 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:56:59 -0700
+
+
+Started PUT "/todoodoo/68" for 127.0.0.1 at 2014-09-01 10:57:42 -0700
+Processing by TodoodooController#update as HTML
+  Parameters: {"authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "id"=>"68"}
+  [1m[35mTodoodoo Load (0.2ms)[0m  SELECT  "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."id" = ? LIMIT 1  [["id", 68]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "todoodoos" SET "done" = ?, "updated_at" = ? WHERE "todoodoos"."id" = 68  [["done", "t"], ["updated_at", "2014-09-01 17:57:42.935439"]]
+  [1m[36m (20.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todoodoo/index?notice=Your+To-Do+item+was+marked+as+done%21
+Completed 302 Found in 25ms (ActiveRecord: 21.5ms)
+
+
+Started GET "/todoodoo/index?notice=Your+To-Do+item+was+marked+as+done%21" for 127.0.0.1 at 2014-09-01 10:57:42 -0700
+Processing by TodoodooController#index as HTML
+  Parameters: {"notice"=>"Your To-Do item was marked as done!"}
+  [1m[35mTodoodoo Load (0.2ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'
+  [1m[36mTodoodoo Load (0.2ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'[0m
+  Rendered todoodoo/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:43 -0700
+
+
+Started DELETE "/todoodoo/68" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+Processing by TodoodooController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "id"=>"68"}
+  [1m[35mTodoodoo Load (0.2ms)[0m  SELECT  "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."id" = ? LIMIT 1  [["id", 68]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "todoodoos" WHERE "todoodoos"."id" = ?  [["id", 68]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todoodoo/index
+Completed 302 Found in 20ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/todoodoo/index" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+Processing by TodoodooController#index as HTML
+  [1m[35mTodoodoo Load (0.2ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'
+  [1m[36mTodoodoo Load (0.1ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'[0m
+  Rendered todoodoo/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:57:59 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-01 10:58:24 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 102ms (Views: 66.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-01 10:58:29 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MV0Y56mykrMhBF3h9TRMzDa4w4aI4Warboi2Iq/AuPY=", "user"=>{"email"=>"paulchung39@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'paulchung39@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["remember_created_at", "2014-09-01 17:58:30.137975"], ["updated_at", "2014-09-01 17:58:30.138770"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.8ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-09-01 17:58:30.174693"], ["last_sign_in_at", "2014-08-27 03:22:16.587919"], ["sign_in_count", 18], ["updated_at", "2014-09-01 17:58:30.178814"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 239ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mTodoodoo Load (0.3ms)[0m  [1mSELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 'f'[0m
+  [1m[35mTodoodoo Load (0.1ms)[0m  SELECT "todoodoos".* FROM "todoodoos"  WHERE "todoodoos"."done" = 't'
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/todoodoo.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/todoodoo.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2014-09-01 10:58:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveDetailsFromUsers (20140901180518)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.7ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', NULL, NULL, '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, NULL, NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, NULL, NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, NULL, NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, NULL, NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "users"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', NULL, '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', NULL, '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '127.0.0.1', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '127.0.0.1', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '127.0.0.1', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '127.0.0.1', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","last_sign_in_ip","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '127.0.0.1', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "created_at" datetime, "updated_at" datetime, "name" varchar(255), "roles_mask" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","created_at","updated_at","name","roles_mask") VALUES (1, 'paulchung39@gmail.com', '$2a$10$9rQw.UrauSuOP9tzNX.bV.cwfgJMVs4f01WXQ0KrPQAsVaJlxMaVG', '2014-09-01 17:58:30.137975', 18, '2014-09-01 17:58:30.174693', '2014-08-27 03:22:16.587919', '2014-08-26 03:20:59.184536', '2014-09-01 17:58:30.178814', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","created_at","updated_at","name","roles_mask") VALUES (2, 'test@test.com', '$2a$10$wQg0k4SAjmjQZzoneVfEauUBgJZdc4EF6ZPeyt1/AAjwWyp.Fyrey', NULL, 1, '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.220490', '2014-08-26 05:02:26.211651', '2014-08-26 05:02:26.221321', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","created_at","updated_at","name","roles_mask") VALUES (3, 'andrea@gmail.com', '$2a$10$cm1ZooYIohcM3ip7zRRfMu0wUjTN10EjNqUk7AxywLVxxS5SIm/z.', NULL, 1, '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.866899', '2014-08-27 03:22:08.861796', '2014-08-27 03:22:08.868245', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","created_at","updated_at","name","roles_mask") VALUES (4, 'george.washington@gmail.com', '$2a$10$hfXhgaZ5pm/TxWdZtuTtCO85e7gIyp1CwpIBgYck73uhbhoJssd5y', NULL, 1, '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.868963', '2014-08-27 03:33:55.714126', '2014-08-27 03:33:55.869993', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","created_at","updated_at","name","roles_mask") VALUES (5, 'test1@test.com', '$2a$10$09T3C5fFCT0KuRvOrJIerOb4BcHEOac9o/JGrXq4CQrNZKbP5hNP6', NULL, 1, '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.208194', '2014-08-27 03:37:14.201585', '2014-08-27 03:37:14.208880', NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140901180518"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users"[0m

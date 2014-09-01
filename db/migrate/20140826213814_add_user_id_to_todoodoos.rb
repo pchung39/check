@@ -1,5 +1,5 @@
 class AddUserIdToTodoodoos < ActiveRecord::Migration
   def change
-  	add_column :user_id
+  	add_column :todoodoos, :user_id, :integer
   end
 end

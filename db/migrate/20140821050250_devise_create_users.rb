@@ -22,7 +22,4 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def self.down
     drop_table :users
   end
-  
-  def change
-    remove_column :reset_password_token, :reset_password_sent_at, :remember_created_at
 end
