@@ -7,8 +7,11 @@ class User < ActiveRecord::Base
   has_many :roles, through: :association
 
   ROLES = %w[admin user]
-  serialize :roles
-
+  
+  def is?(role)
+    roles.include?(role.to_s)
+  end
+  
   def roles=(roles)
   self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
   end
@@ -17,6 +20,7 @@ class User < ActiveRecord::Base
      ROLES.reject do |r|
        ((roles_mask.to_i || 0) & 2**ROLES.index(r)).zero?
   end
+  
 end
 end
     
