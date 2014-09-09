@@ -1,23 +1,136 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Check</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<html lang="en">
+  <head>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Check</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 75px;
+      }
+      .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+      }
+      .container {
+        max-width:1000px;
+      }
 
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-</div>
+     /* User sign in and sign forms. */
+  .border-form-div {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+  .border-form-div .form-signin-heading,
+  .border-form-div .checkbox {
+    margin-bottom: 10px;
+  }
+  .border-form-div input[type="text"],
+  .border-form-div input[type="email"],
+  .border-form-div input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+  } 
+    </style>
+    <!--lighten/darken logo png on mouseover-->
+    <style type="text/css">
 
-<%= yield %>
+      .outerLink 
+      {
+        background-color:transparent;  
+        opacity:1.0;
+        filter:alpha(opacity=100);
+        width:50px;
+        height:50px;
+      }
 
-</body>
+      img.darkableImage 
+      {
+        opacity:0.7;
+        filter:alpha(opacity=70);
+      }
+</style>
+
+  </head>
+
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+<!--               <a href="/" class="outerLink"><img src="http://imagizer.imageshack.us/v2/150x100q90/913/hsGR9e.png" width= "50" height= "50" class="darkableImage" onmouseout="this.style.opacity=0.7;this.filters.alpha.opacity=70" onmouseover="this.style.opacity=1.0;this.filters.alpha.opacity=100" /> -->
+            <li class="active"><a href="/">Home</a></li>
+          </ul>
+         <p class="navbar-text navbar-right">
+        <% if user_signed_in? %>
+        <%= link_to "Account", edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        
+
+      <% else %>
+         <%= link_to "Sign up", new_user_registration_path %> |  <%= link_to "Login", new_user_session_path %>
+      <% end %></p>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+ 
+ 
+    <div class="container">
+      <% if flash[:notice] %>
+        <p class="alert alert-success"><%= flash[:notice] %>
+      <% end %>
+      <% if flash[:error] %>
+        <p class="alert alert-warning"><%= flash[:error] %>
+      <% end %>
+<!-- Start - No longer appears to be needed for errors because of above code //-->
+   <% flash.each do |name,message| %>
+    <% content_tag :div, :message, :id => "flash_#{name}" %>
+      <% end %>
+<!-- End - No longer appears to be needed for errors because of above code //-->  
+      <%= yield %>
+ 
+    </div><!-- /.container -->
+ 
+ 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script>
+    //** removes alerts after 4 seconds */
+    window.setTimeout(function() {
+        $(".alert").fadeTo(4500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 2000);
+    </script>
+  </body>
 </html>
