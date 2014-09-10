@@ -3,10 +3,21 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
+gem 'bcrypt-ruby', '~> 3.1.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
-gem "devise"
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+#You can copy Devise views <for customization> to your app by running
+#rails g devise:views
+gem 'devise'
+gem 'cancan'
+gem 'in_place_editing'
+gem 'best_in_place'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,13 +36,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
-gem 'table_print'
-
-gem 'cancan'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,3 +50,11 @@ gem 'cancan'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+group :developent, :test do
+	gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+	gem 'capybara', '~> 2.1.0'
+end

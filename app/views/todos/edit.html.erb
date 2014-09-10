@@ -1,0 +1,21 @@
+<div class="border-form-div">
+<h1>Edit item</h1>
+<%= form_for :todo, url: todo_path(@todo), method: :patch do |f| %>
+  <% if @todo.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@todo.errors.count, "error") %> prohibited
+      this todo from being saved:</h2>
+    <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+	<%= f.label :name %>: <%= f.text_field :name %>
+	<%= f.hidden_field :done, :value => false %>
+	<%= f.submit "Save", class: "btn btn-primary" %><br></br>
+  <%= link_to "Back", :back %>
+<% end %>
+</div>
