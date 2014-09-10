@@ -16,6 +16,7 @@ end
 #rails g devise:views
 gem 'devise'
 gem 'cancan'
+gem 'table_print'
 gem 'in_place_editing'
 gem 'best_in_place'
 # Use SCSS for stylesheets
