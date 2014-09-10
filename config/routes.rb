@@ -1,22 +1,21 @@
-Rails.application.routes.draw do
+TaskDragon::Application.routes.draw do
+
   devise_for :users
 
-  get 'todoodoo/index'
-  get 'welcome/home'
-
-  root to: "welcome#home"
-  resources :todoodoo do
+  root :to => "welcome#home"
+  
+  resources :todos do
     member do
-      put :completes
+      put :complete
     end
-  end 
-
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

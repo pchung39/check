@@ -1,0 +1,18 @@
+<div class="border-form-div">
+<h1>Add new task</h1>
+
+<%= form_for @todo, :url => todos_path(@todo) do |f| %>
+	<%= f.label :name %>: <%= f.text_field :name %>
+	<%= f.hidden_field :done, :value => false %>
+	<%= f.submit "Add",:class=>'btn btn-primary' %>
+	<%= link_to "Cancel", :back %><br></br>
+	
+	<p>Suggestions:</p>
+	<ul>
+		<li>Be specific</li>
+		<li>Be concise</li>
+		<li>Do not include other tasks</li>
+	</ul>
+<% end %>
+</div>
+
