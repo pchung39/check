@@ -17,8 +17,6 @@ end
 gem 'devise'
 gem 'cancan'
 gem 'table_print'
-gem 'in_place_editing'
-gem 'best_in_place'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,7 +50,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-group :developent, :test do
+group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
 end
 

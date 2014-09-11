@@ -3,25 +3,33 @@
 
 <h2>Current Tasks</h2>
 <ul>
-	<% @todos.each do |t| %>
-			<li>
-				<h4><%= t.name %></h4>
-				<small><%= link_to "Done", complete_todo_path(t), :method => :put %></small>
-				<small><%= link_to "Edit", edit_todo_path(t) %></small> 
-				<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
-			</li>
+	<% if @todos.empty? %>
+		<h4 style="color:#E0E0E0">No current tasks</h4>
+	<% else %>
+		<% @todos.each do |t| %>
+				<li>
+					<h4><%= t.name %></h4>
+					<small><%= link_to "Done", complete_todo_path(t), :method => :put %></small>
+					<small><%= link_to "Edit", edit_todo_path(t) %></small> 
+					<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
+				</li>
 		<% end %>
+	<% end %>
 </ul>
 
 
 <h2>Completed Tasks</h2>
 <ul>
-<% @completes.each do |t| %>
-	<li style="color:#E0E0E0">
-		<h4 style="color:#E0E0E0"><%= t.name %></h4>
-		<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
-	</li>
-<% end %> 
+	<% if @completes.empty? %>
+		<h4 style="color:#E0E0E0">No completed tasks</h4>
+	<% else %>
+		<% @completes.each do |t| %>
+			<li>
+				<h4><%= t.name %></h4>
+				<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
+			</li>
+		<% end %> 
+	<% end %>
 </ul>
 
 
