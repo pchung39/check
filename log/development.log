@@ -88961,3 +88961,3501 @@ Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-11 15:33:17 -0700
 Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:05:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 386ms (Views: 339.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:47 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:48 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:48 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:05:48 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-11 16:05:52 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (196.0ms)
+Completed 200 OK in 268ms (Views: 216.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-11 16:06:03 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s9Ur9LcBc7o8bYj1PHadtKuzx1U4FiFNnPKqRese6yE=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-11 23:06:03.569077"], ["last_sign_in_at", "2014-09-11 22:30:41.590706"], ["sign_in_count", 68], ["updated_at", "2014-09-11 23:06:03.571077"]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 302ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:06:03 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:06:03 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (13.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 225ms (Views: 53.0ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:04 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:05 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:05 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:06:05 -0700
+
+
+Started PUT "/todos/150/complete" for 127.0.0.1 at 2014-09-11 16:18:45 -0700
+Processing by TodosController#complete as HTML
+  Parameters: {"authenticity_token"=>"9r0+eT7EMDwmgdaxHQ/VLtKBQQtCuXWvlhtge3ob3GE=", "id"=>"150"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 150]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "todos" SET "done" = ?, "updated_at" = ? WHERE "todos"."id" = 150[0m  [["done", "t"], ["updated_at", "2014-09-11 23:18:45.737670"]]
+  [1m[35m (19.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 33ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:18:45 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:18:45 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:18:46 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:22:50 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:22:50 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todos/158/edit" for 127.0.0.1 at 2014-09-11 16:25:05 -0700
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"158"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  Rendered todos/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 153ms (Views: 145.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/todos/158" for 127.0.0.1 at 2014-09-11 16:28:55 -0700
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9r0+eT7EMDwmgdaxHQ/VLtKBQQtCuXWvlhtge3ob3GE=", "todo"=>{"name"=>"How to Start a Business, Soft Skills, SEO Basics, Careers Foundations, ", "done"=>"false"}, "commit"=>"Save", "id"=>"158"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "todos" SET "name" = ?, "updated_at" = ? WHERE "todos"."id" = 158[0m  [["name", "How to Start a Business, Soft Skills, SEO Basics, Careers Foundations, "], ["updated_at", "2014-09-11 23:28:55.778562"]]
+  [1m[35m (62.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 84ms (ActiveRecord: 64.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:28:55 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:28:56 -0700
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-11 16:29:04 -0700
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered todos/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2014-09-11 16:29:18 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:29:21 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:29:21 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todos/158/edit" for 127.0.0.1 at 2014-09-11 16:29:27 -0700
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"158"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  Rendered todos/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/todos/158" for 127.0.0.1 at 2014-09-11 16:29:44 -0700
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9r0+eT7EMDwmgdaxHQ/VLtKBQQtCuXWvlhtge3ob3GE=", "todo"=>{"name"=>"How to Start a Business, Soft Skills, SEO Basics, Careers Foundations, etc. Business Courses on Treehouse ", "done"=>"false"}, "commit"=>"Save", "id"=>"158"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "todos" SET "name" = ?, "updated_at" = ? WHERE "todos"."id" = 158[0m  [["name", "How to Start a Business, Soft Skills, SEO Basics, Careers Foundations, etc. Business Courses on Treehouse "], ["updated_at", "2014-09-11 23:29:44.358341"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 23ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:29:44 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:29:44 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:29:44 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:29:45 -0700
+
+
+Started GET "/todos/158/edit" for 127.0.0.1 at 2014-09-11 16:30:08 -0700
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"158"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  Rendered todos/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/todos/158" for 127.0.0.1 at 2014-09-11 16:30:41 -0700
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9r0+eT7EMDwmgdaxHQ/VLtKBQQtCuXWvlhtge3ob3GE=", "todo"=>{"name"=>"Soft Skills, How to Start a Business, SEO Basics, Careers Foundations, etc. Business Courses on Treehouse ", "done"=>"false"}, "commit"=>"Save", "id"=>"158"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "todos" SET "name" = ?, "updated_at" = ? WHERE "todos"."id" = 158[0m  [["name", "Soft Skills, How to Start a Business, SEO Basics, Careers Foundations, etc. Business Courses on Treehouse "], ["updated_at", "2014-09-11 23:30:41.422605"]]
+  [1m[35m (61.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 101ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:30:41 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:30:41 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:30:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:30:42 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:30:55 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:30:55 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-11 16:30:59 -0700
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered todos/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:31:02 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-11 16:31:08 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9r0+eT7EMDwmgdaxHQ/VLtKBQQtCuXWvlhtge3ob3GE="}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:31:08 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:08 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:09 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-11 16:31:14 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-11 16:31:25 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2HFPjxYcTe/rVkMJAGYwFjTujxEGgoscpaeaUB1fzeg=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-09-11 23:31:25.478125"], ["last_sign_in_at", "2014-09-11 23:06:03.569077"], ["sign_in_count", 69], ["updated_at", "2014-09-11 23:31:25.479125"]]
+  [1m[35m (65.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 173ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 16:31:25 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 16:31:25 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:25 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:25 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 16:31:26 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 19:27:09 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 19:27:09 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 70ms (Views: 65.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-11 19:52:24 -0700
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 06:58:49 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 06:58:50 -0700
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-12 06:59:04 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fvUTnJrMAuauJppgediZjuBjtRyoVB9lEjSziVJJvqA="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 06:59:04 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:04 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:05 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 06:59:15 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-12 06:59:32 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-12 06:59:41 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JpZ/CA8T/MX+HAXbGDsqHIKvRmj7poBRbRf2m//fzNs=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-09-12 13:59:41.370839"], ["last_sign_in_at", "2014-09-11 23:31:25.478125"], ["sign_in_count", 70], ["updated_at", "2014-09-12 13:59:41.371839"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 106ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 06:59:41 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 06:59:41 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:41 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 06:59:42 -0700
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-12 10:47:02 -0700
+Processing by TodosController#new as HTML
+  [1m[36mUser Load (142.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered todos/new.html.erb within layouts/application (405.0ms)
+Completed 200 OK in 1892ms (Views: 993.1ms | ActiveRecord: 142.0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2014-09-12 11:41:58 -0700
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"50M1GUIrnQtkTv/FTmj2YtiKmBJwj0pJGzZ6FNUUl2A=", "todo"=>{"name"=>"slap and tickle, salty dog, rum and cola, rabbit punch, pink pony, ocean motion, fuzzbump, cherry bomb, chocotini, spaceport, cyder, grog, open sauce, dank and stormy, hot toddy, slithery nipple, babycake, blue velvet, cookiechunk, fudgesicle, butterroll, gr8ps, pasty, luckysurprise, royal jelly, tigerlily, scrapple, beer nut, gorf, pastaco, creamsicle, overcookie, moonpie. mulberry, drunkenbear, grue, cheshire, baby yeti, doppelshifter, dandylion, bankpiggy, fiendish, gn*, lumpy, chompy, pengi, hitpenguin, nextgen, skullbat, new wave, tacocat, temporal, weretaco, zeppo, zol, ", "done"=>"false"}, "commit"=>"Add"}
+  [1m[35mUser Load (9.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (14.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (74.0ms)[0m  INSERT INTO "todos" ("created_at", "done", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-09-12 18:41:58.371580"], ["done", "f"], ["name", "slap and tickle, salty dog, rum and cola, rabbit punch, pink pony, ocean motion, fuzzbump, cherry bomb, chocotini, spaceport, cyder, grog, open sauce, dank and stormy, hot toddy, slithery nipple, babycake, blue velvet, cookiechunk, fudgesicle, butterroll, gr8ps, pasty, luckysurprise, royal jelly, tigerlily, scrapple, beer nut, gorf, pastaco, creamsicle, overcookie, moonpie. mulberry, drunkenbear, grue, cheshire, baby yeti, doppelshifter, dandylion, bankpiggy, fiendish, gn*, lumpy, chompy, pengi, hitpenguin, nextgen, skullbat, new wave, tacocat, temporal, weretaco, zeppo, zol, "], ["updated_at", "2014-09-12 18:41:58.371580"], ["user_id", 1]]
+  [1m[36m (54.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 508ms (ActiveRecord: 151.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 11:41:58 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (49.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (501.0ms)
+Completed 200 OK in 576ms (Views: 513.0ms | ActiveRecord: 52.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 11:41:59 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 11:41:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 11:42:00 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 14:00:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 769ms (Views: 711.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:19 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:20 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:20 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-12 14:00:31 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (275.0ms)
+Completed 200 OK in 372ms (Views: 305.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-12 14:00:40 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jTT88L9Ilkx1nJTjfkG3IHbFuR+GRLS9H5foKA/HsR8=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-12 21:00:40.902576"], ["last_sign_in_at", "2014-09-12 13:59:41.370839"], ["sign_in_count", 71], ["updated_at", "2014-09-12 21:00:40.905577"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 308ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 285ms (Views: 105.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:42 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:42 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 14:00:42 -0700
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2014-09-12 14:01:03 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 73ms (Views: 70.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 14:01:06 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 15:52:53 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 15:52:53 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 17:04:45 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 17:30:23 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 34ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 17:30:24 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (30.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 168ms (Views: 131.0ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 23:41:57 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (28.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 59ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 23:41:57 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 130ms (Views: 125.0ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-12 23:41:59 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"86Pu0ATdFpHxtY8WtpHGZwJqkno3fvrTjv3yU+Eka9I="}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (49.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 1711ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 23:42:01 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 183ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:02 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:03 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-12 23:42:08 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (114.0ms)
+Completed 200 OK in 256ms (Views: 180.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-12 23:42:17 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k6PF12SaKgjbZOmYyS3hep4qBa8M4LdBFBXgTueEW7w=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (12.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (38.0ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-09-13 06:42:17.542550"], ["last_sign_in_at", "2014-09-12 21:00:40.902576"], ["sign_in_count", 72], ["updated_at", "2014-09-13 06:42:17.572552"]]
+  [1m[35m (40.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 613ms (ActiveRecord: 90.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-12 23:42:17 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-12 23:42:17 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-12 23:42:18 -0700
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-13 01:03:38 -0700
+Processing by TodosController#new as HTML
+  [1m[36mUser Load (25.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered todos/new.html.erb within layouts/application (1206.1ms)
+Completed 200 OK in 1377ms (Views: 1305.1ms | ActiveRecord: 25.0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7IYgKijJn0cdA6izHZYen2w+fLol/Fc7wjJ0bGWz7o=", "todo"=>{"name"=>"Find an official looking meteor begin tut", "done"=>"false"}, "commit"=>"Add"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (19.0ms)[0m  INSERT INTO "todos" ("created_at", "done", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-09-13 08:04:08.170422"], ["done", "f"], ["name", "Find an official looking meteor begin tut"], ["updated_at", "2014-09-13 08:04:08.170422"], ["user_id", 1]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 198ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (25.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 93ms (Views: 63.0ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:09 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:09 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:09 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 01:04:09 -0700
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-13 01:04:10 -0700
+Processing by TodosController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered todos/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7IYgKijJn0cdA6izHZYen2w+fLol/Fc7wjJ0bGWz7o=", "todo"=>{"name"=>"look at ms cpq structure, rules, implementation, features, classic features, mobs, buffs, all that jazz. and compile into this todo", "done"=>"false"}, "commit"=>"Add"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "todos" ("created_at", "done", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-09-13 08:05:02.175511"], ["done", "f"], ["name", "look at ms cpq structure, rules, implementation, features, classic features, mobs, buffs, all that jazz. and compile into this todo"], ["updated_at", "2014-09-13 08:05:02.175511"], ["user_id", 1]]
+  [1m[36m (64.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 72ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:02 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:03 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 01:05:03 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:35:40 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:35:40 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (7.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 43ms (Views: 33.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:36:07 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:36:07 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 64ms (Views: 59.0ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-13 08:36:09 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o7IYgKijJn0cdA6izHZYen2w+fLol/Fc7wjJ0bGWz7o="}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:36:09 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 08:36:10 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:36:21 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:37:27 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-13 08:40:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hFah1/4RdMdVk6szMfq4T5AmqOeZYcvDzLEj+8mYdVk=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-13 15:40:37.213986"], ["last_sign_in_at", "2014-09-13 06:42:17.542550"], ["sign_in_count", 73], ["updated_at", "2014-09-13 15:40:37.215986"]]
+  [1m[36m (30.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 253ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:38 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:38 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 08:40:38 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 08:41:00 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (78.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 81ms (ActiveRecord: 78.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:41:00 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos/161/edit" for 127.0.0.1 at 2014-09-13 08:41:44 -0700
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"161"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 161]]
+  Rendered todos/edit.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 146ms (Views: 112.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/todos/161" for 127.0.0.1 at 2014-09-13 08:41:58 -0700
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZnKP7kXwHN+ke7+jILBBnX+O58RK0+M2k0uQiiHF/i8=", "todo"=>{"name"=>"Watch a video on Coursera from Sports in SocietyCrytography 1 if bored", "done"=>"false"}, "commit"=>"Save", "id"=>"161"}
+  [1m[35mUser Load (106.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 161]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (16.0ms)[0m  [1mUPDATE "todos" SET "name" = ?, "updated_at" = ? WHERE "todos"."id" = 161[0m  [["name", "Watch a video on Coursera from Sports in SocietyCrytography 1 if bored"], ["updated_at", "2014-09-13 15:41:58.975662"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 146ms (ActiveRecord: 135.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 73ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 08:41:59 -0700
+
+
+Started GET "/todos/161/edit" for 127.0.0.1 at 2014-09-13 08:42:04 -0700
+Processing by TodosController#edit as HTML
+  Parameters: {"id"=>"161"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 161]]
+  Rendered todos/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/todos/161" for 127.0.0.1 at 2014-09-13 08:42:08 -0700
+Processing by TodosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZnKP7kXwHN+ke7+jILBBnX+O58RK0+M2k0uQiiHF/i8=", "todo"=>{"name"=>"Watch a video on Coursera from Sports in Society/Crytography 1 if bored", "done"=>"false"}, "commit"=>"Save", "id"=>"161"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 161]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "todos" SET "name" = ?, "updated_at" = ? WHERE "todos"."id" = 161[0m  [["name", "Watch a video on Coursera from Sports in Society/Crytography 1 if bored"], ["updated_at", "2014-09-13 15:42:08.964233"]]
+  [1m[35m (65.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 74ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:09 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 08:42:10 -0700
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2014-09-13 12:46:50 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 13:31:51 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 13:31:51 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 20:28:15 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 20:28:15 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-13 20:28:22 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZnKP7kXwHN+ke7+jILBBnX+O58RK0+M2k0uQiiHF/i8="}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 20:28:22 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:23 -0700
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-09-13 20:28:26 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (425.0ms)
+Completed 200 OK in 467ms (Views: 463.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-13 20:28:29 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 109ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OKejDhryGOYw3wq4wVGO5j7+jw07vD9tKZTQ2FnqECg=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-14 03:28:37.180701"], ["last_sign_in_at", "2014-09-13 15:40:37.213986"], ["sign_in_count", 74], ["updated_at", "2014-09-14 03:28:37.181701"]]
+  [1m[36m (68.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 201ms (ActiveRecord: 71.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:37 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:38 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:38 -0700
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2014-09-13 20:28:40 -0700
+Processing by TodosController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered todos/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2014-09-13 20:28:47 -0700
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKQXfLPjdb5xD3SNnjZ0tTcsPAkpq1dtiSUQ3oG7nEk=", "todo"=>{"name"=>"asdfasdf", "done"=>"false"}, "commit"=>"Add"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (12.0ms)[0m  [1mINSERT INTO "todos" ("created_at", "done", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-09-14 03:28:47.554294"], ["done", "f"], ["name", "asdfasdf"], ["updated_at", "2014-09-14 03:28:47.554294"], ["user_id", 1]]
+  [1m[35m (34.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 54ms (ActiveRecord: 46.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 20:28:47 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:47 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:48 -0700
+
+
+Started DELETE "/todos/169" for 127.0.0.1 at 2014-09-13 20:28:52 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RKQXfLPjdb5xD3SNnjZ0tTcsPAkpq1dtiSUQ3oG7nEk=", "id"=>"169"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 169]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 169]]
+  [1m[35m (123.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 134ms (ActiveRecord: 126.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-13 20:28:52 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:52 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:52 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-13 20:28:53 -0700
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-14 08:21:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (14.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (179.0ms)
+Completed 200 OK in 1317ms (Views: 846.0ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:41 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:42 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:42 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-14 08:21:42 -0700
+
+
+Started PUT "/todos/167/complete" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+Processing by TodosController#complete as HTML
+  Parameters: {"authenticity_token"=>"RKQXfLPjdb5xD3SNnjZ0tTcsPAkpq1dtiSUQ3oG7nEk=", "id"=>"167"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTodo Load (1.0ms)[0m  SELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1  [["user_id", 1], ["id", 167]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (21.0ms)[0m  UPDATE "todos" SET "done" = ?, "updated_at" = ? WHERE "todos"."id" = 167  [["done", "t"], ["updated_at", "2014-09-14 15:28:27.227842"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 38ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 82ms (Views: 75.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:27 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:28 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-14 08:28:28 -0700
+
+
+Started GET "/todos/" for 127.0.0.1 at 2014-09-14 17:41:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as HTML
+Completed 500 Internal Server Error in 73ms
+
+NoMethodError (undefined method `todos' for nil:NilClass):
+  app/controllers/todos_controller.rb:4:in `index'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (115.0ms)
+
+
+Started GET "/todos/" for 127.0.0.1 at 2014-09-14 17:41:54 -0700
+Processing by TodosController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `todos' for nil:NilClass):
+  app/controllers/todos_controller.rb:4:in `index'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-14 17:42:01 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 543ms (Views: 542.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:01 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:02 -0700
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-14 17:42:05 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (365.0ms)
+Completed 200 OK in 443ms (Views: 394.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-14 17:42:16 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LDSVS22D9zWQ6QfPOih1c2syX5SxONTIp2xBCE4j0u4=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-15 00:42:16.987701"], ["last_sign_in_at", "2014-09-14 03:28:37.180701"], ["sign_in_count", 75], ["updated_at", "2014-09-15 00:42:16.990701"]]
+  [1m[36m (47.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 289ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-14 17:42:17 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-14 17:42:17 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 292ms (Views: 87.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:17 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-14 17:42:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-14 17:42:18 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 09:20:15 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (49.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 432ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2014-09-15 09:20:16 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 204ms (Views: 199.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 09:20:19 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (11.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 101ms (Views: 85.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 09:20:20 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 09:20:20 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:06:40 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:06:41 -0700
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:07:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (8.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (113.0ms)
+Completed 200 OK in 850ms (Views: 529.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:07:45 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 12:11:01 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:11:01 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:02 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 12:11:04 -0700
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:11:04 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sf1KZgRxyjAWTRkLT9XWOvqEE7/HPopXexg44e/Oxys="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:06 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:07 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:11:07 -0700
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-09-15 12:13:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (242.0ms)
+Completed 200 OK in 501ms (Views: 414.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 12:13:49 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-09-15 12:13:51 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 128ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-09-15 12:13:57 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/BFBqWql8HG6+RmDojMY/9zeDMIt7eLzj9MWYQ9vM2s=", "user"=>{"email"=>"lee.j.gabriel@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'lee.j.gabriel@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (19.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-09-15 19:13:57.554756"], ["last_sign_in_at", "2014-09-15 00:42:16.987701"], ["sign_in_count", 76], ["updated_at", "2014-09-15 19:13:57.557756"]]
+  [1m[36m (30.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 325ms (ActiveRecord: 51.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-15 12:13:57 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:13:57 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 121ms (Views: 43.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:13:58 -0700
+
+
+Started DELETE "/todos/161" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"161"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 161]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 161]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 22ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:14:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:14:19 -0700
+
+
+Started DELETE "/todos/168" for 127.0.0.1 at 2014-09-15 12:16:57 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"168"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 168]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 168]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 22ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:16:57 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:16:57 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:16:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:16:58 -0700
+
+
+Started DELETE "/todos/151" for 127.0.0.1 at 2014-09-15 12:17:01 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"151"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 151]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 151]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 19ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:01 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:01 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:02 -0700
+
+
+Started DELETE "/todos/152" for 127.0.0.1 at 2014-09-15 12:17:04 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"152"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 152]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 152]]
+  [1m[35m (53.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 64ms (ActiveRecord: 55.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:04 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:04 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:04 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:05 -0700
+
+
+Started DELETE "/todos/153" for 127.0.0.1 at 2014-09-15 12:17:07 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"153"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 153]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 153]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 19ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:07 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:07 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:08 -0700
+
+
+Started DELETE "/todos/154" for 127.0.0.1 at 2014-09-15 12:17:10 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"154"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 154]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 154]]
+  [1m[35m (60.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 70ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:10 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:10 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:11 -0700
+
+
+Started DELETE "/todos/155" for 127.0.0.1 at 2014-09-15 12:17:13 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"155"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 155]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 155]]
+  [1m[35m (66.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 80ms (ActiveRecord: 70.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:13 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 58ms (Views: 52.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:13 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:14 -0700
+
+
+Started DELETE "/todos/156" for 127.0.0.1 at 2014-09-15 12:17:16 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"156"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 156]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 156]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 20ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:16 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:16 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:17 -0700
+
+
+Started DELETE "/todos/157" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"157"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 157]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 157]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 20ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:19 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:20 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:20 -0700
+
+
+Started DELETE "/todos/158" for 127.0.0.1 at 2014-09-15 12:17:22 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"158"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 158]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 158]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 21ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:22 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:22 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:23 -0700
+
+
+Started DELETE "/todos/159" for 127.0.0.1 at 2014-09-15 12:17:25 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"159"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 159]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 159]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 14ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:25 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:25 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:26 -0700
+
+
+Started DELETE "/todos/160" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"160"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 160]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 160]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 19ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:29 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:30 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:30 -0700
+
+
+Started DELETE "/todos/166" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"166"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 166]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 166]]
+  [1m[35m (58.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 71ms (ActiveRecord: 60.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:32 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:33 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:33 -0700
+
+
+Started DELETE "/todos/145" for 127.0.0.1 at 2014-09-15 12:17:37 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"145"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTodo Load (1.0ms)[0m  SELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1  [["user_id", 1], ["id", 145]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 145]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 20ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:37 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:37 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:38 -0700
+
+
+Started DELETE "/todos/167" for 127.0.0.1 at 2014-09-15 12:17:41 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"167"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 167]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 167]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 17ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:41 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (1.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:41 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:42 -0700
+
+
+Started DELETE "/todos/150" for 127.0.0.1 at 2014-09-15 12:17:44 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"150"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTodo Load (0.0ms)[0m  SELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1  [["user_id", 1], ["id", 150]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 150]]
+  [1m[36m (61.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 71ms (ActiveRecord: 63.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:44 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  [1m[36mTodo Load (1.0ms)[0m  [1mSELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:44 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:44 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:45 -0700
+
+
+Started DELETE "/todos/149" for 127.0.0.1 at 2014-09-15 12:17:47 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"149"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTodo Load (0.0ms)[0m  [1mSELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 149]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 149]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 22ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:47 -0700
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'  [["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'[0m  [["user_id", 1]]
+  [1m[35mTodo Load (0.0ms)[0m  SELECT "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:47 -0700
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:48 -0700
+
+
+Started DELETE "/todos/146" for 127.0.0.1 at 2014-09-15 12:17:50 -0700
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHKm1qgixvv3bvipxspbsmggVqXVxeVuPlnNVd7YSLQ=", "id"=>"146"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTodo Load (0.0ms)[0m  SELECT  "todos".* FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT 1  [["user_id", 1], ["id", 146]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "todos" WHERE "todos"."id" = ?  [["id", 146]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 19ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2014-09-15 12:17:50 -0700
+Processing by TodosController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 'f'[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todos"  WHERE "todos"."user_id" = ? AND "todos"."done" = 't'  [["user_id", 1]]
+  Rendered todos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/todos.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:50 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/todos.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-09-15 12:17:51 -0700
