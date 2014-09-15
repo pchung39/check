@@ -9,7 +9,7 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
 #You can copy Devise views <for customization> to your app by running
