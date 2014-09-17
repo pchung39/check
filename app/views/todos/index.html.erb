@@ -26,6 +26,7 @@
 		<% @completes.each do |t| %>
 			<li>
 				<h4><%= t.name %></h4>
+				<small><%= link_to "Undo", undo_todo_path(t), :method => :put %></small>
 				<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
 			</li>
 		<% end %> 

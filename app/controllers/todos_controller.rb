@@ -19,37 +19,45 @@ class TodosController < ApplicationController
   end
 
   def edit
-    @todo = current_user.todos.find(params[:id])
+    if !current_user.admin?
+      redirect_to todos_path, :notice => "Sorry! You must be an admin to edit :("
+    end
   end
 
   def complete
-    @todo = current_user.todos.find(params[:id])
-    @todo.update_attribute(:done, true)
-    redirect_to todos_path, :notice => "Task Complete"
+    set_todo
+    @todo.mark_complete!
+    redirect_to todos_path, :notice => "Task Complete!"
   end
 
-  # def completed
-  #   @todos = Task.find(:all, :conditions => "completed_at IS NOT NULL")
-  # end
+  def undo
+    set_todo
+    @todo.undo_complete!
+    redirect_to todos_path, :notice => "Task Replaced!"
+  end
 
   def update
-    @todo = current_user.todos.find(params[:id])
+    set_todo
     if @todo.update(todo_params)
-      redirect_to todos_path, :notice => "Updated"
+      redirect_to todos_path, :notice => "Updated!"
     else
       render 'edit'
     end
   end
 
   def destroy
-    @todo = current_user.todos.find(params[:id])
+    set_todo
     @todo.destroy
-    redirect_to todos_path, :notice => "Task Removed"
+    redirect_to todos_path, :notice => "Task Removed!"
   end
 
-  private
-    def todo_params
-      params.require(:todo).permit(:name, :done)
-    end
+
+  def todo_params
+    params.require(:todo).permit(:name, :done)
+  end
+
+  def set_todo
+    @todo = current_user.todos.find(params[:id])
+  end
 
 end

@@ -7,6 +7,7 @@ TaskDragon::Application.routes.draw do
   resources :todos do
     member do
       put :complete
+      put :undo
     end
   end
 
