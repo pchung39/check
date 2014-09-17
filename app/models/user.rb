@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   before_create :downcase_email
 
+  ROLES= %w[ Admin User ]
+
   def to_param
     name
   end

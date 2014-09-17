@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :set_todo, only: [:edit, :update, :destroy, :complete, :undo]
+  before_filter :authenticate_user!
 
   def index
     @todos = current_user.todos.where(done: false)
@@ -46,11 +48,14 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    set_todo
-    @todo.destroy
-    redirect_to todos_path, :notice => "Task Removed!"
+    if !current_user.admin?
+      redirect_to todos_path, :notice => "Sorry! You must be an admin to remove :("
+    else
+      set_todo
+      @todo.destroy
+      redirect_to todos_path, :notice => "Task Removed!"
+    end
   end
-
 
   def todo_params
     params.require(:todo).permit(:name, :done)

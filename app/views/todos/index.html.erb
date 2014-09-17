@@ -11,7 +11,7 @@
 					<h4><%= t.name %></h4>
 					<small><%= link_to "Done", complete_todo_path(t), :method => :put %></small>
 					<small><%= link_to "Edit", edit_todo_path(t) %></small> 
-					<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
+					<small><%= link_to "Remove", todo_path(t), :method => :delete %></small>
 				</li>
 		<% end %>
 	<% end %>
@@ -27,10 +27,11 @@
 			<li>
 				<h4><%= t.name %></h4>
 				<small><%= link_to "Undo", undo_todo_path(t), :method => :put %></small>
-				<small><%= link_to "Remove", todo_path(t), data: { confirm: "Remove?" }, :method => :delete %></small>
+				<small><%= link_to "Remove", todo_path(t), :method => :delete %></small>
 			</li>
 		<% end %> 
 	<% end %>
 </ul>
 
+<!-- data: { confirm: "Remove?" }, -->
 
