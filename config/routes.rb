@@ -1,9 +1,10 @@
-TaskDragon::Application.routes.draw do
+Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users 
 
   root :to => "welcome#home"
   
+  resources :users
   resources :todos do
     member do
       put :complete

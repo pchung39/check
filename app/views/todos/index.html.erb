@@ -4,7 +4,7 @@
 <h2>Current Tasks</h2>
 <ul>
 	<% if @todos.empty? %>
-		<h4 style="color:#E0E0E0">No current tasks</h4>
+		<h3 style="color:#E0E0E0">No current tasks</h3>
 	<% else %>
 		<% @todos.each do |t| %>
 				<li>
@@ -21,7 +21,7 @@
 <h2>Completed Tasks</h2>
 <ul>
 	<% if @completes.empty? %>
-		<h4 style="color:#E0E0E0">No completed tasks</h4>
+		<h3 style="color:#E0E0E0">No completed tasks</h3>
 	<% else %>
 		<% @completes.each do |t| %>
 			<li>

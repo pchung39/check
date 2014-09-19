@@ -1,6 +1,5 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:edit, :update, :destroy, :complete, :undo]
-  before_filter :authenticate_user!
 
   def index
     @todos = current_user.todos.where(done: false)
@@ -14,32 +13,29 @@ class TodosController < ApplicationController
   def create
     @todo = current_user.todos.new(todo_params)
     if @todo.save
-      redirect_to todos_path, :notice => "Task Created"
+      redirect_to todos_path, :notice => "Task Created!"
     else
       render "new"
     end
   end
 
   def edit
-    if !current_user.admin?
-      redirect_to todos_path, :notice => "Sorry! You must be an admin to edit :("
+    unless current_user.admin? or current_user.vip?
+      redirect_to todos_path, :notice => "Oops! Become a VIP to Edit and Remove todos!"
     end
   end
 
   def complete
-    set_todo
     @todo.mark_complete!
     redirect_to todos_path, :notice => "Task Complete!"
   end
 
   def undo
-    set_todo
     @todo.undo_complete!
     redirect_to todos_path, :notice => "Task Replaced!"
   end
 
   def update
-    set_todo
     if @todo.update(todo_params)
       redirect_to todos_path, :notice => "Updated!"
     else
@@ -48,10 +44,9 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    if !current_user.admin?
-      redirect_to todos_path, :notice => "Sorry! You must be an admin to remove :("
+    unless current_user.admin? or current_user.vip?
+      redirect_to todos_path, :notice => "Oops! Become a VIP to Edit and Remove todos!"
     else
-      set_todo
       @todo.destroy
       redirect_to todos_path, :notice => "Task Removed!"
     end
@@ -63,6 +58,10 @@ class TodosController < ApplicationController
 
   def set_todo
     @todo = current_user.todos.find(params[:id])
+  end
+
+  def secure_params
+    params.require(:user).permit(:role)
   end
 
 end
