@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  before_action :set_todo, only: [:edit, :update, :destroy, :complete, :undo]
 
   def index
     @todos = current_user.todos.where(done: false)
@@ -12,44 +13,55 @@ class TodosController < ApplicationController
   def create
     @todo = current_user.todos.new(todo_params)
     if @todo.save
-      redirect_to todos_path, :notice => "Task Created"
+      redirect_to todos_path, :notice => "Task Created!"
     else
       render "new"
     end
   end
 
   def edit
-    @todo = current_user.todos.find(params[:id])
+    unless current_user.admin? or current_user.vip?
+      redirect_to todos_path, :notice => "Oops! Become a VIP to Edit and Remove todos!"
+    end
   end
 
   def complete
-    @todo = current_user.todos.find(params[:id])
-    @todo.update_attribute(:done, true)
-    redirect_to todos_path, :notice => "Task Complete"
+    @todo.mark_complete!
+    redirect_to todos_path, :notice => "Task Complete!"
   end
 
-  # def completed
-  #   @todos = Task.find(:all, :conditions => "completed_at IS NOT NULL")
-  # end
+  def undo
+    @todo.undo_complete!
+    redirect_to todos_path, :notice => "Task Replaced!"
+  end
 
   def update
-    @todo = current_user.todos.find(params[:id])
     if @todo.update(todo_params)
-      redirect_to todos_path, :notice => "Updated"
+      redirect_to todos_path, :notice => "Updated!"
     else
       render 'edit'
     end
   end
 
   def destroy
-    @todo = current_user.todos.find(params[:id])
-    @todo.destroy
-    redirect_to todos_path, :notice => "Task Removed"
+    unless current_user.admin? or current_user.vip?
+      redirect_to todos_path, :notice => "Oops! Become a VIP to Edit and Remove todos!"
+    else
+      @todo.destroy
+      redirect_to todos_path, :notice => "Task Removed!"
+    end
   end
 
-  private
-    def todo_params
-      params.require(:todo).permit(:name, :done)
-    end
+  def todo_params
+    params.require(:todo).permit(:name, :done)
+  end
+
+  def set_todo
+    @todo = current_user.todos.find(params[:id])
+  end
+
+  def secure_params
+    params.require(:user).permit(:role)
+  end
 
 end

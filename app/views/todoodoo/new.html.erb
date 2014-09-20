@@ -1,7 +1,0 @@
-<h1> Add new item to your To-Do list </h1>
-
-<%= form_for @todoo, url: {action: "create"} do |f| %>
-  <%= f.label :Task %>: <%= f.text_field :name %>
-  <%= f.hidden_field :done, :value => false %>
-  <%= f.submit "Add to To-Do list", class: "btn btn-primary" %>
-<% end %>
